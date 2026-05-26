@@ -5,12 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.5rem;
+  --radius-3xl: 0.625rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -30,68 +30,79 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-gold: var(--gold);
-  --color-cream: var(--cream);
-  --color-emerald-deep: var(--emerald-deep);
+  --color-ink: var(--ink);
+  --color-teal: var(--teal);
+  --color-coral: var(--coral);
+  --color-mist: var(--mist);
   --font-serif: "Lora", Georgia, serif;
   --font-sans: "Nunito Sans", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.75rem;
-  /* Emerald Prestige palette */
-  --emerald-deep: oklch(0.32 0.08 165);  /* #064e3b */
-  --emerald: oklch(0.48 0.11 165);       /* #0d7a5f */
-  --gold: oklch(0.74 0.12 85);           /* #c9a84c */
-  --cream: oklch(0.96 0.02 85);          /* #f5f0e0 */
+  --radius: 0.375rem;
+  /* Solstice Lab palette */
+  --ink: oklch(0.25 0.055 235);
+  --teal: oklch(0.55 0.12 195);
+  --coral: oklch(0.68 0.18 35);
+  --mist: oklch(0.94 0.055 188);
+  --pearl: oklch(1 0 0);
 
-  --background: oklch(0.985 0.012 85);
-  --foreground: oklch(0.18 0.04 165);
+  --background: var(--pearl);
+  --foreground: var(--ink);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 165);
+  --card-foreground: var(--ink);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 165);
-  --primary: var(--emerald-deep);
-  --primary-foreground: var(--cream);
-  --secondary: var(--cream);
-  --secondary-foreground: var(--emerald-deep);
-  --muted: oklch(0.94 0.015 85);
-  --muted-foreground: oklch(0.45 0.03 165);
-  --accent: var(--gold);
-  --accent-foreground: var(--emerald-deep);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: oklch(0.985 0.008 100);
+  --secondary: var(--mist);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.95 0.016 205);
+  --muted-foreground: oklch(0.46 0.035 230);
+  --accent: var(--coral);
+  --accent-foreground: var(--ink);
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.88 0.02 85);
-  --input: oklch(0.92 0.015 85);
-  --ring: var(--emerald);
+  --border: oklch(0.88 0.02 205);
+  --input: oklch(0.92 0.018 205);
+  --ring: var(--teal);
 }
 
 .dark {
-  --background: oklch(0.18 0.04 165);
-  --foreground: var(--cream);
-  --card: oklch(0.24 0.05 165);
-  --card-foreground: var(--cream);
-  --popover: oklch(0.24 0.05 165);
-  --popover-foreground: var(--cream);
-  --primary: var(--gold);
-  --primary-foreground: var(--emerald-deep);
-  --secondary: oklch(0.28 0.05 165);
-  --secondary-foreground: var(--cream);
-  --muted: oklch(0.28 0.05 165);
-  --muted-foreground: oklch(0.75 0.03 85);
-  --accent: var(--emerald);
-  --accent-foreground: var(--cream);
+  --background: oklch(0.19 0.04 235);
+  --foreground: oklch(0.96 0.018 100);
+  --card: oklch(0.24 0.045 235);
+  --card-foreground: oklch(0.96 0.018 100);
+  --popover: oklch(0.24 0.045 235);
+  --popover-foreground: oklch(0.96 0.018 100);
+  --primary: var(--coral);
+  --primary-foreground: var(--ink);
+  --secondary: oklch(0.3 0.07 195);
+  --secondary-foreground: oklch(0.96 0.018 100);
+  --muted: oklch(0.3 0.04 235);
+  --muted-foreground: oklch(0.78 0.035 205);
+  --accent: var(--teal);
+  --accent-foreground: oklch(0.96 0.018 100);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
-  --ring: var(--gold);
+  --ring: var(--coral);
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
+  * {
+    border-color: var(--color-border);
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }
-  h1, h2, h3, h4, h5 { font-family: var(--font-serif); letter-spacing: -0.01em; }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-serif);
+    letter-spacing: 0;
+  }
 }

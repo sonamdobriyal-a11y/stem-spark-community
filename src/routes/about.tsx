@@ -1,14 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Target, Heart, Globe2, Sparkles } from "lucide-react";
-import collabImg from "@/assets/collab.jpg";
+import { freeImages } from "@/lib/free-images";
 
 export const Route = createFileRoute("/about")({ component: About });
 
 const values = [
-  { icon: Target, title: "Purpose-driven", text: "Every feature is built to remove barriers for women entering STEM." },
-  { icon: Heart, title: "Inclusive", text: "We welcome all backgrounds, identities, and levels of experience." },
+  {
+    icon: Target,
+    title: "Purpose-driven",
+    text: "Every feature is built to remove barriers for women entering STEM.",
+  },
+  {
+    icon: Heart,
+    title: "Inclusive",
+    text: "We welcome all backgrounds, identities, and levels of experience.",
+  },
   { icon: Globe2, title: "Global", text: "Stories and resources from women across 40+ countries." },
-  { icon: Sparkles, title: "Inspiring", text: "Curated to spark curiosity in the next generation of innovators." },
+  {
+    icon: Sparkles,
+    title: "Inspiring",
+    text: "Curated to spark curiosity in the next generation of innovators.",
+  },
 ];
 
 function About() {
@@ -16,20 +28,33 @@ function About() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <header className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-accent">About us</p>
-        <h1 className="mt-3 font-serif text-4xl text-primary md:text-6xl">A platform where every woman in STEM belongs.</h1>
+        <h1 className="mt-3 font-serif text-4xl text-primary md:text-6xl">
+          A platform where every woman in STEM belongs.
+        </h1>
         <p className="mt-5 text-lg text-muted-foreground">
-          HerSTEM was born from a simple observation: when girls see women succeeding in science and technology, they imagine themselves there too. We built this platform to make that visibility universal.
+          HerSTEM was born from a simple observation: when girls see women succeeding in science and
+          technology, they imagine themselves there too. We built this platform to make that
+          visibility universal.
         </p>
       </header>
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         <div className="md:col-span-2 overflow-hidden rounded-2xl">
-          <img src={collabImg} alt="Women collaborating" loading="lazy" width={1280} height={900} className="h-full w-full object-cover" />
+          <img
+            src={freeImages.collaboration.src}
+            alt={freeImages.collaboration.alt}
+            loading="lazy"
+            width={1280}
+            height={900}
+            className="h-full w-full object-cover"
+            title={`Photo: ${freeImages.collaboration.credit}`}
+          />
         </div>
         <div className="rounded-2xl bg-primary p-8 text-primary-foreground">
           <h2 className="font-serif text-2xl">Our mission</h2>
           <p className="mt-3 text-sm text-primary-foreground/80">
-            To inspire, educate, and connect women and girls pursuing careers in Science, Technology, Engineering, and Mathematics — through stories, learning, and community.
+            To inspire, educate, and connect women and girls pursuing careers in Science,
+            Technology, Engineering, and Mathematics — through stories, learning, and community.
           </p>
         </div>
       </div>
@@ -51,15 +76,21 @@ function About() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <p className="font-serif text-5xl text-primary">2024</p>
-            <p className="mt-2 text-sm text-muted-foreground">Founded by a small group of students and engineers.</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Founded by a small group of students and engineers.
+            </p>
           </div>
           <div>
             <p className="font-serif text-5xl text-primary">12k+</p>
-            <p className="mt-2 text-sm text-muted-foreground">Community members across 40+ countries.</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Community members across 40+ countries.
+            </p>
           </div>
           <div>
             <p className="font-serif text-5xl text-primary">300+</p>
-            <p className="mt-2 text-sm text-muted-foreground">Curated videos and interviews available today.</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Curated videos and interviews available today.
+            </p>
           </div>
         </div>
       </section>

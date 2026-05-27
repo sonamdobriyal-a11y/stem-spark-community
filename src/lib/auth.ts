@@ -15,6 +15,50 @@ const adminEmails = String(import.meta.env.VITE_ADMIN_EMAILS ?? "")
   .map((email) => email.trim().toLowerCase())
   .filter(Boolean);
 
+const signInErrorMessages: Record<string, string> = {
+  "auth/user-not-found": "No account found with this email.",
+  "auth/wrong-password": "Incorrect password. Please try again.",
+  "auth/invalid-credential": "Incorrect email or password.",
+  "auth/invalid-email": "Please enter a valid email address.",
+  "auth/user-disabled": "This account has been disabled.",
+  "auth/too-many-requests": "Too many attempts. Please try again later.",
+  "auth/network-request-failed": "Network error. Check your connection and try again.",
+};
+
+const signUpErrorMessages: Record<string, string> = {
+  "auth/email-already-in-use": "An account with this email already exists.",
+  "auth/invalid-email": "Please enter a valid email address.",
+  "auth/weak-password": "Password must be at least 6 characters.",
+  "auth/operation-not-allowed": "Account creation is not available right now.",
+  "auth/too-many-requests": "Too many attempts. Please try again later.",
+  "auth/network-request-failed": "Network error. Check your connection and try again.",
+};
+
+function getFirebaseAuthErrorCode(error: unknown): string | undefined {
+  if (error != null && typeof error === "object" && "code" in error) {
+    const code = (error as { code?: unknown }).code;
+    return typeof code === "string" ? code : undefined;
+  }
+  return undefined;
+}
+
+export function getAuthErrorMessage(error: unknown, mode: "signin" | "signup"): string {
+  const code = getFirebaseAuthErrorCode(error);
+  const messages = mode === "signin" ? signInErrorMessages : signUpErrorMessages;
+
+  if (code && messages[code]) {
+    return messages[code];
+  }
+
+  if (error instanceof Error && error.message === "Firebase Auth is not configured.") {
+    return "Sign-in is unavailable right now.";
+  }
+
+  return mode === "signin"
+    ? "Could not sign in. Please check your email and password."
+    : "Could not create your account. Please try again.";
+}
+
 export function listenToAuthState(onUser: (user: User | null) => void): Unsubscribe | null {
   if (!auth) return null;
   return onAuthStateChanged(auth, (user) => {

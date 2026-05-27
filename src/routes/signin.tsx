@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   createAccountWithEmail,
+  getAuthErrorMessage,
   getDisplayName,
   isAdminUser,
   signInWithEmail,
@@ -28,7 +29,7 @@ function SignIn() {
     setStatus("");
 
     if (!isConfigured) {
-      setStatus("Firebase is not configured yet.");
+      setStatus("Sign-in is unavailable right now.");
       return;
     }
 
@@ -47,7 +48,7 @@ function SignIn() {
       setForm({ name: "", email: "", password: "" });
     } catch (error) {
       console.error("Authentication failed", error);
-      setStatus("Unable to sign in. Check your details and Firebase Auth settings.");
+      setStatus(getAuthErrorMessage(error, mode));
     } finally {
       setSubmitting(false);
     }

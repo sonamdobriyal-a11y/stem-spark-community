@@ -1,9 +1,7 @@
 import {
-  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signInWithPopup,
   signOut,
   updateProfile,
   type User,
@@ -54,13 +52,6 @@ export async function createAccountWithEmail(name: string, email: string, passwo
   }
 
   await saveUserProfile(credential.user, name.trim());
-  return credential.user;
-}
-
-export async function signInWithGoogle() {
-  if (!auth) throw new Error("Firebase Auth is not configured.");
-  const credential = await signInWithPopup(auth, new GoogleAuthProvider());
-  await saveUserProfile(credential.user);
   return credential.user;
 }
 

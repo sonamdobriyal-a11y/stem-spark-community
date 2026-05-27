@@ -10,7 +10,6 @@ import {
   getDisplayName,
   isAdminUser,
   signInWithEmail,
-  signInWithGoogle,
   signOutUser,
 } from "@/lib/auth";
 import { useAuthUser } from "@/hooks/use-auth-user";
@@ -49,19 +48,6 @@ function SignIn() {
     } catch (error) {
       console.error("Authentication failed", error);
       setStatus("Unable to sign in. Check your details and Firebase Auth settings.");
-    } finally {
-      setSubmitting(false);
-    }
-  }
-
-  async function handleGoogleSignIn() {
-    setStatus("");
-    setSubmitting(true);
-    try {
-      await signInWithGoogle();
-    } catch (error) {
-      console.error("Google sign-in failed", error);
-      setStatus("Google sign-in failed. Check your Firebase Auth provider settings.");
     } finally {
       setSubmitting(false);
     }
@@ -175,18 +161,6 @@ function SignIn() {
                 {submitting ? "Please wait..." : mode === "signin" ? "Sign in" : "Create account"}
               </Button>
             </form>
-
-            <div className="my-6 flex items-center gap-3 text-xs text-muted-foreground">
-              <div className="h-px flex-1 bg-border" /> OR <div className="h-px flex-1 bg-border" />
-            </div>
-            <Button
-              variant="outline"
-              className="w-full"
-              onClick={handleGoogleSignIn}
-              disabled={submitting}
-            >
-              Continue with Google
-            </Button>
 
             {status && <p className="mt-4 text-sm text-destructive">{status}</p>}
 

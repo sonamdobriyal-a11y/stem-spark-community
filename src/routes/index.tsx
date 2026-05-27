@@ -9,7 +9,7 @@ function Home() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
       {/* Hero bento */}
-      <section className="grid grid-cols-1 gap-4 md:grid-cols-6 md:grid-rows-2 md:gap-5">
+      <section className="grid grid-cols-1 gap-4 md:grid-cols-6 md:grid-rows-[minmax(0,auto)_170px] md:gap-5 lg:grid-rows-[minmax(0,auto)_185px]">
         {/* Headline */}
         <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-8 md:col-span-4 md:row-span-1 md:p-12">
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-semibold text-accent-foreground">
@@ -39,13 +39,13 @@ function Home() {
         </div>
 
         {/* Hero image */}
-        <div className="relative overflow-hidden rounded-2xl md:col-span-2 md:row-span-2">
+        <div className="relative min-h-[320px] overflow-hidden rounded-2xl md:col-span-2 md:row-span-2 md:min-h-0">
           <img
             src={freeImages.hero.src}
             alt={freeImages.hero.alt}
-            width={1280}
-            height={1600}
-            className="h-full w-full object-cover"
+            width={1800}
+            height={1350}
+            className="h-full w-full object-cover object-center"
             title={`Photo: ${freeImages.hero.credit}`}
           />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 to-transparent p-5 text-primary-foreground">
@@ -55,7 +55,7 @@ function Home() {
         </div>
 
         {/* Stats */}
-        <div className="rounded-2xl border border-border bg-secondary p-6 md:col-span-2">
+        <div className="rounded-2xl border border-border bg-secondary p-6 md:col-span-2 md:h-full">
           <p className="font-serif text-4xl text-primary">28%</p>
           <p className="mt-1 text-sm text-muted-foreground">
             of the global STEM workforce is women. We're changing that — one mentor at a time.
@@ -65,7 +65,7 @@ function Home() {
         {/* Resources teaser */}
         <Link
           to="/resources"
-          className="group relative overflow-hidden rounded-2xl bg-primary p-6 text-primary-foreground md:col-span-2"
+          className="group relative overflow-hidden rounded-2xl bg-primary p-6 text-primary-foreground md:col-span-2 md:h-full"
         >
           <BookOpen className="h-7 w-7 text-accent" />
           <h3 className="mt-3 font-serif text-2xl">Learning library</h3>

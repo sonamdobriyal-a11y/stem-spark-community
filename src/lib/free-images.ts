@@ -1,9 +1,9 @@
 export const freeImages = {
   hero: {
-    src: "https://images.unsplash.com/photo-1705579608671-f28c09a35cde?auto=format&fit=crop&w=1200&q=80",
-    alt: "Woman engineer working on a laptop in a laboratory",
-    credit: "ThisisEngineering on Unsplash",
-    sourceUrl: "https://unsplash.com/photos/a-woman-working-on-a-laptop-in-a-lab-Co7qtVV5XoQ",
+    src: "https://images.unsplash.com/photo-1655814563963-0fe0a7d6c279?auto=format&fit=crop&w=1800&q=90",
+    alt: "Woman scientist working with laboratory samples",
+    credit: "Julia Koblitz on Unsplash",
+    sourceUrl: "https://unsplash.com/photos/a-woman-in-a-lab-coat-f4jc67ICvzQ",
   },
   collaboration: {
     src: "https://images.unsplash.com/photo-1752650736024-d6aac18abc2d?auto=format&fit=crop&w=1200&q=80",

@@ -23,16 +23,17 @@ function Home() {
             a community building the future of science and technology.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-            >
+            <Button asChild size="lg" className="bg-[#31566a] text-white hover:bg-[#294b5d]">
               <Link to="/signin">
                 Join HerSTEM <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary/30 text-primary">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-[#adc3ce] text-[#31566a] hover:bg-[#eef6f9]"
+            >
               <Link to="/resources">Explore resources</Link>
             </Button>
           </div>
@@ -48,7 +49,7 @@ function Home() {
             className="h-full w-full object-cover object-center"
             title={`Photo: ${freeImages.hero.credit}`}
           />
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 to-transparent p-5 text-primary-foreground">
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#3b6170]/70 to-transparent p-5 text-white">
             <p className="font-serif text-lg">"The future belongs to those who imagine it."</p>
             <p className="mt-1 text-xs opacity-80">— Dr. Mae Jemison</p>
           </div>
@@ -65,14 +66,14 @@ function Home() {
         {/* Resources teaser */}
         <Link
           to="/resources"
-          className="group relative overflow-hidden rounded-2xl bg-primary p-6 text-primary-foreground md:col-span-2 md:h-full"
+          className="group relative overflow-hidden rounded-2xl border border-[#c8dce5] bg-[#eef7fb] p-6 text-primary md:col-span-2 md:h-full"
         >
-          <BookOpen className="h-7 w-7 text-accent" />
+          <BookOpen className="h-7 w-7 text-[#d65f82]" />
           <h3 className="mt-3 font-serif text-2xl">Learning library</h3>
           <p className="mt-1 text-sm opacity-80">
             Curated videos across math, biology, code &amp; more.
           </p>
-          <ArrowRight className="absolute right-5 top-5 h-5 w-5 text-accent transition-transform group-hover:translate-x-1" />
+          <ArrowRight className="absolute right-5 top-5 h-5 w-5 text-[#d65f82] transition-transform group-hover:translate-x-1" />
         </Link>
       </section>
 
@@ -80,7 +81,7 @@ function Home() {
       <section className="mt-16">
         <div className="mb-8 flex flex-col items-start justify-between gap-3 md:flex-row md:items-end">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-accent">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#d65f82]">
               Everything in one place
             </p>
             <h2 className="mt-2 font-serif text-3xl text-primary md:text-4xl">
@@ -96,7 +97,7 @@ function Home() {
           <FeatureCard
             to="/history"
             className="md:col-span-3 md:row-span-2"
-            tone="primary"
+            tone="sky"
             icon={<History className="h-6 w-6" />}
             title="History of Women in Tech"
             desc="From Ada Lovelace to Katherine Johnson — meet the women who built modern computing, with full timelines and stories."
@@ -106,7 +107,7 @@ function Home() {
           <FeatureCard
             to="/community"
             className="md:col-span-3"
-            tone="accent"
+            tone="peach"
             icon={<Users className="h-6 w-6" />}
             title="Community"
             desc="Post, comment, and connect with peers across disciplines."
@@ -114,7 +115,7 @@ function Home() {
           <FeatureCard
             to="/interviews"
             className="md:col-span-3"
-            tone="secondary"
+            tone="mint"
             icon={<Mic className="h-6 w-6" />}
             title="Hear from Women in STEM"
             desc="Long-form interviews with students &amp; industry leaders."
@@ -122,7 +123,7 @@ function Home() {
           <FeatureCard
             to="/about"
             className="md:col-span-2"
-            tone="primary"
+            tone="lavender"
             icon={<Sparkles className="h-6 w-6" />}
             title="About us"
             desc="Our mission &amp; the team behind it."
@@ -130,7 +131,7 @@ function Home() {
           <FeatureCard
             to="/resources"
             className="md:col-span-2"
-            tone="secondary"
+            tone="aqua"
             icon={<BookOpen className="h-6 w-6" />}
             title="Resources"
             desc="Video libraries by subject."
@@ -138,7 +139,7 @@ function Home() {
           <FeatureCard
             to="/community"
             className="md:col-span-2"
-            tone="accent"
+            tone="rose"
             icon={<MessageCircle className="h-6 w-6" />}
             title="Share your story"
             desc="Be the role model someone needs."
@@ -147,18 +148,14 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="mt-20 overflow-hidden rounded-3xl bg-primary">
+      <section className="mt-20 overflow-hidden rounded-3xl border border-[#c8dce5] bg-[#eef7fb]">
         <div className="grid md:grid-cols-2">
-          <div className="p-10 text-primary-foreground md:p-14">
+          <div className="p-10 text-primary md:p-14">
             <h2 className="font-serif text-3xl md:text-4xl">Ready to add your voice?</h2>
-            <p className="mt-4 max-w-md text-primary-foreground/80">
+            <p className="mt-4 max-w-md text-muted-foreground">
               Create a free account to join the community, save resources, and share your journey.
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="mt-7 bg-accent text-accent-foreground hover:bg-accent/90"
-            >
+            <Button asChild size="lg" className="mt-7 bg-[#f3c8b6] text-primary hover:bg-[#edbca5]">
               <Link to="/signin">Create your account</Link>
             </Button>
           </div>
@@ -191,7 +188,7 @@ function FeatureCard({
 }: {
   to: string;
   className?: string;
-  tone: "primary" | "accent" | "secondary";
+  tone: "sky" | "peach" | "mint" | "lavender" | "aqua" | "rose";
   icon: React.ReactNode;
   title: string;
   desc: string;
@@ -199,14 +196,17 @@ function FeatureCard({
   imageCredit?: string;
 }) {
   const tones = {
-    primary: "bg-primary text-primary-foreground",
-    accent: "bg-accent text-accent-foreground",
-    secondary: "bg-secondary text-secondary-foreground",
+    sky: "border-[#d5e5ee] bg-[#f5fbfe] text-primary",
+    peach: "border-[#efd9c8] bg-[#fff7f1] text-primary",
+    mint: "border-[#bceee5] bg-[#e9fbf7] text-primary",
+    lavender: "border-[#d7c8f3] bg-[#f6f1ff] text-primary",
+    aqua: "border-[#abdfe4] bg-[#ebfbfd] text-primary",
+    rose: "border-[#efb7ca] bg-[#ffe8f0] text-primary",
   };
   return (
     <Link
       to={to}
-      className={`group relative overflow-hidden rounded-2xl border border-border p-6 transition-transform hover:-translate-y-0.5 ${tones[tone]} ${className}`}
+      className={`group relative overflow-hidden rounded-2xl border p-6 transition hover:-translate-y-0.5 hover:shadow-md ${tones[tone]} ${className}`}
     >
       {image && (
         <img
@@ -214,7 +214,7 @@ function FeatureCard({
           alt=""
           loading="lazy"
           title={imageCredit ? `Photo: ${imageCredit}` : undefined}
-          className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-screen"
+          className="absolute inset-0 h-full w-full object-cover opacity-15 mix-blend-multiply"
         />
       )}
       <div className="relative flex h-full flex-col">

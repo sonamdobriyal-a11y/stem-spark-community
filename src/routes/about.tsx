@@ -50,7 +50,7 @@ function About() {
             title={`Photo: ${freeImages.collaboration.credit}`}
           />
         </div>
-        <div className="rounded-2xl bg-primary p-8 text-primary-foreground">
+        <div className="rounded-2xl bg-[#31566a] p-8 text-primary-foreground">
           <h2 className="font-serif text-2xl">Our mission</h2>
           <p className="mt-3 text-sm text-primary-foreground/80">
             To inspire, educate, and connect women and girls pursuing careers in Science,
@@ -72,7 +72,7 @@ function About() {
         </div>
       </section>
 
-      <section className="mt-16 rounded-3xl bg-secondary p-10 md:p-14">
+      <section className="mt-16 rounded-3xl border border-[#d7f2ed] bg-[#f2fffc] p-10 md:p-14">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <p className="font-serif text-5xl text-primary">2024</p>

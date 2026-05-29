@@ -56,7 +56,7 @@ function SignIn() {
 
   return (
     <div className="mx-auto grid min-h-[calc(100vh-200px)] max-w-6xl gap-8 px-6 py-12 md:grid-cols-2 md:items-center">
-      <div className="hidden rounded-3xl bg-primary p-12 text-primary-foreground md:block">
+      <div className="hidden rounded-3xl bg-[#31566a] p-12 text-primary-foreground md:block">
         <Atom className="h-10 w-10 text-accent" />
         <h2 className="mt-6 font-serif text-4xl leading-tight">Your journey in STEM, supported.</h2>
         <p className="mt-4 text-primary-foreground/80">

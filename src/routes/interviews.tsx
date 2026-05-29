@@ -114,7 +114,7 @@ function Interviews() {
         </p>
       </header>
 
-      <section className="mt-12 overflow-hidden rounded-3xl bg-primary text-primary-foreground">
+      <section className="mt-12 overflow-hidden rounded-3xl bg-[#31566a] text-primary-foreground">
         <div className="grid md:grid-cols-2">
           <div className="relative aspect-video overflow-hidden md:aspect-auto">
             {featured.thumbnailUrl ? (
@@ -124,9 +124,9 @@ function Interviews() {
                 className="absolute inset-0 h-full w-full object-cover"
               />
             ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-primary via-teal/80 to-accent/80" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#31566a] via-teal/70 to-accent/70" />
             )}
-            <div className="absolute inset-0 grid place-items-center bg-primary/20">
+            <div className="absolute inset-0 grid place-items-center bg-[#31566a]/15">
               {featured.videoUrl ? (
                 <a
                   href={featured.videoUrl}

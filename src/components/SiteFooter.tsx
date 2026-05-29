@@ -3,7 +3,7 @@ import { Atom } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-border/60 bg-primary text-primary-foreground">
+    <footer className="mt-24 border-t border-border/60 bg-[#31566a] text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 font-serif text-2xl">

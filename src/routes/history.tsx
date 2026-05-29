@@ -43,7 +43,7 @@ function History() {
         </ul>
       </div>
 
-      <section className="mt-20 rounded-3xl bg-primary p-10 text-primary-foreground md:p-14">
+      <section className="mt-20 rounded-3xl bg-[#31566a] p-10 text-primary-foreground md:p-14">
         <h2 className="font-serif text-3xl md:text-4xl">"I was taught the way of progress is neither swift nor easy."</h2>
         <p className="mt-3 text-sm text-primary-foreground/75">— Marie Curie</p>
       </section>
